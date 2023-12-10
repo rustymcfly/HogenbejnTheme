@@ -1,0 +1,10 @@
+{% block block_hero %}
+    <div class="leoparden-hero-block col-12 position-relative h-100">
+            {% set element = block.slots.getSlot('image') %}
+		<img src="{{element.data.media.url}}" class="h-100 w-100" alt="{{element.data.media.alt}}" />
+        <div class="floating-container">
+            {% set element = block.slots.getSlot('content') %}
+            {% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" %}
+        </div>
+    </div>
+{% endblock %}

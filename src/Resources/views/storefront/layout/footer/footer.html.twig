@@ -1,0 +1,144 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+                {% block layout_footer_navigation_hotline %}
+                    <div class="col-md-3 footer-column js-footer-column">
+                        {% block layout_footer_navigation_hotline_headline %}
+                            <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+                                 id="collapseFooterHotlineTitle"
+                                 data-bs-toggle="#collapseFooterHotline"
+                                 aria-expanded="true"
+                                 aria-controls="collapseFooterHotline"
+                                 role="listitem">
+                                {{ 'footer.serviceHotlineHeadline'|trans|sw_sanitize }}
+                                {% block layout_footer_navigation_hotline_icons %}
+                                    <div class="footer-column-toggle">
+                                        <span class="footer-plus-icon">
+                                            {% sw_icon 'plus' %}
+                                        </span>
+                                        <span class="footer-minus-icon">
+                                            {% sw_icon 'minus' %}
+                                        </span>
+                                    </div>
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+
+                        {% block layout_footer_navigation_hotline_content %}
+                            <div id="collapseFooterHotline"
+                                 class="footer-column-content collapse js-footer-column-content footer-contact"
+                                 aria-labelledby="collapseFooterHotlineTitle">
+                                <div class="footer-column-content-inner">
+                                    <p class="footer-contact-hotline">
+                                        {{ 'footer.serviceHotline'|trans|sw_sanitize }}
+                                    </p>
+                                </div>
+                                <div class="footer-contact-form">
+                                    {{ 'footer.serviceContactLink'|trans({
+                                        '%url%': path('frontend.cms.page', { id: config('core.basicInformation.contactPage') })
+                                    })|raw }}
+                                </div>
+                                <div class="footer-column-content-inner">
+                                    <a href="https://wa.me/4970218730010" target="_blank" alt="WhatsApp">
+                                        {% sw_icon 'whatsapp' style {
+                                            color: 'whatsapp',
+                                            namespace: 'HogenbejnTheme'
+                                        } %}
+&nbsp;
+                                        {{ 'footer.whatsapptext'|trans|sw_sanitize }}
+                                    </a>
+                                </div>
+                            </div>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+
+                {% block layout_footer_navigation_columns %}
+                    {% for root in page.footer.navigation.tree %}
+                        {% block layout_footer_navigation_column %}
+                            <div class="col-md-3 footer-column js-footer-column">
+                                {% block layout_footer_navigation_information_headline %}
+                                    <div class="footer-column-headline footer-headline js-collapse-footer-column-trigger"
+                                         data-bs-toggle="#collapseFooterTitle{{ loop.index }}"
+                                         aria-expanded="true"
+                                         aria-controls="collapseFooter{{ loop.index }}">
+
+                                        {% if root.category.type == 'folder' %}
+                                            {{ root.category.translated.name }}
+                                        {% else %}
+                                            <a href="{{ category_url(root.category) }}"
+                                               {% if category_linknewtab(root.category) %}target="_blank"{% endif %}
+                                               title="{{ root.category.translated.name }}">
+                                                {{ root.category.translated.name }}
+                                            </a>
+                                        {% endif %}
+                                        {% block layout_footer_navigation_information_icons %}
+                                            <div class="footer-column-toggle">
+                                                <span class="footer-plus-icon">
+                                                    {% sw_icon 'plus' %}
+                                                </span>
+                                                <span class="footer-minus-icon">
+                                                    {% sw_icon 'minus' %}
+                                                </span>
+                                            </div>
+                                        {% endblock %}
+                                    </div>
+                                {% endblock %}
+
+                                {% block layout_footer_navigation_information_content %}
+                                    <div id="collapseFooter{{ loop.index }}"
+                                         class="footer-column-content collapse js-footer-column-content"
+                                         aria-labelledby="collapseFooterTitle{{ loop.index }}">
+                                        <div class="footer-column-content-inner">
+                                            {% block layout_footer_navigation_information_links %}
+                                                <ul class="list-unstyled">
+                                                    {% for treeItem in root.children %}
+                                                        {% set category = treeItem.category %}
+                                                        {% set name = category.translated.name %}
+
+                                                        {# @deprecated tag:v6.5.0 - Use "category.translated.externalLink" directly or category_url function instead. #}
+                                                        {% set externalLink = category.translated.externalLink %}
+
+                                                        {% block layout_footer_navigation_information_link_item %}
+                                                            <li class="footer-link-item">
+                                                                {% block layout_footer_navigation_information_link %}
+                                                                    {% if category.type == 'folder' %}
+                                                                        <div>{{ name }}</div>
+                                                                    {% else %}
+                                                                        <a class="footer-link"
+                                                                           href="{{ category_url(category) }}"
+                                                                           {% if category_linknewtab(category) %}target="_blank"{% endif %}
+                                                                           title="{{ name }}">
+                                                                            {{ name }}
+                                                                        </a>
+                                                                    {% endif %}
+                                                                {% endblock %}
+                                                            </li>
+                                                        {% endblock %}
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endblock %}
+                                        </div>
+                                    </div>
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                    {% endfor %}
+                    <div class="col-md-3 footer-column text-center">
+                        <div class="footer-column-headline footer-headline">
+                            {{ 'footer.gruener_punkt_headline'|trans }}
+                        </div>
+                        <div class="m-auto w-50 my-1">
+                            <a target="_blank" href="{{ 'footer.gruene_punkt_link'|trans }}"
+                               title="{{ 'footer.gruene_punkt_text'|trans }}">
+                                <img class="img-fluid" alt="der Grüne Punkt"
+                                     src="{{ asset('bundles/hogenbejntheme/assets/images/gruene_punkt.png') }}">
+                            </a>
+                        </div>
+                    </div>
+                {% endblock %}
+
+            {% block layout_footer_copyright %}
+            {% endblock %}
+
+
+        {% block layout_footer_payment_shipping_logos %}
+        {% endblock %}

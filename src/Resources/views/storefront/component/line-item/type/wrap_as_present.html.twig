@@ -1,0 +1,24 @@
+{% sw_extends "@Storefront/storefront/component/line-item/type/generic.html.twig" %}
+
+{% block component_line_item_type_generic_label %}
+    <div class="line-item-label">
+        {{ lineItem.label|trans }}
+    </div>
+{% endblock %}
+
+                {% block component_line_item_type_generic_col_tax_price %}
+                    <div class="line-item-tax-price"></div>
+                {% endblock %}
+                {% block component_line_item_type_generic_col_unit_price %}
+                    <div class="line-item-unit-price"></div>
+                {% endblock %}
+
+            {% block component_line_item_type_generic_col_total_price %}
+                <div class="line-item-total-price"></div>
+            {% endblock %}
+            {% block component_line_item_type_generic_col_quantity %}
+                <div class="line-item-quantity"></div>
+            {% endblock %}
+
+{% block component_line_item_type_generic_wishlist %}
+{% endblock %}

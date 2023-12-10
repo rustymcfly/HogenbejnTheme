@@ -1,0 +1,15 @@
+{% block sw_cms_block_everything_modal %}
+    <div class="sw-cms-block-everything-modal">
+        <slot name="settings"></slot>
+        <sw-card title="true">
+            <template #title>
+            {{ settings.headline }}
+            </template>
+            <template #header-right v-if="settings.closable">&times;</template>
+            <slot name="content"></slot>
+        </sw-card>
+        <sw-button v-if="settings.showButton">{{ settings.label }}</sw-button>
+        <sw-button @click="copyButton"><sw-icon name="regular-copy"></sw-icon>
+            {{ $t('sw-cms.elements.everything-modal.copyButton') }}</sw-button>
+    </div>
+{% endblock %}

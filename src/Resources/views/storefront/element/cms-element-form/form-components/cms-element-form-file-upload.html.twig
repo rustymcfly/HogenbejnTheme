@@ -1,0 +1,23 @@
+{% block cms_form_file_upload_content %}
+    <div class="form-group {{ additionalClass }}">
+        {% block cms_form_file_upload_content_label %}
+            <label class="form-label" for="form-File">
+                {{ "offer.file_upload"|trans }}{% if required %} {{ "general.required"|trans }}{% endif %}
+            </label>
+        {% endblock %}
+        {% block cms_form_file_upload_content_select %}
+            <input name="file"
+                    id="form-File"
+                    type="file"
+                    accept="application/pdf,image/jpg,image/jpeg"
+                    {% if required %}required="required"{% endif %}
+                    class="form-control-file file-upload{% if formViolations.getViolations('/productId') %} is-invalid{% endif %}"/>
+
+            {% if formViolations.getViolations('/file') is not empty %}
+                {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig'
+                    with { violationPath: '/file' }
+                %}
+            {% endif %}
+        {% endblock %}
+    </div>
+{% endblock %}

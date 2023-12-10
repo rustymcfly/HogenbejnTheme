@@ -1,0 +1,26 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-image-gallery.html.twig' %}
+{% block element_image_gallery_inner_item %}
+    {% if 'video' in image.mimeType %}
+        <div class="gallery-slider-item-container">
+            <div class="gallery-slider-item is-{{ displayMode }} js-magnifier-container"{% if minHeight and  (displayMode == "cover" or displayMode == "contain" ) %} style="min-height: {{ minHeight }}"{% endif %}>
+                <video loop style="width:100%; object-fit: cover" autoplay muted class="img-fluid gallery-slider-image">
+                    <source src="{{ image.url }}" type="{{ image.mimeType }}">
+                </video>
+            </div>
+        </div>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+{% block element_image_gallery_inner_thumbnails_item_inner %}
+
+    {% if 'video' in image.mimeType %}
+        <div class="gallery-slider-thumbnails-item-inner">
+            {% sw_icon 'play' style {
+                namespace: 'HogenbejnTheme'
+            } %}
+        </div>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

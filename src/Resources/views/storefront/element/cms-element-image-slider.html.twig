@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-image-slider.html.twig' %}
+{% block element_image_slider_inner_item %}
+    {{ image.mimeType }}
+    {% if 'video' in image.mimeType %}
+        <video controls>
+            <source src="{{ image.url }}" type="{{ image.mimeType }}">
+
+            <source src="/media/cc0-videos/flower.mp4" type="video/mp4">
+        </video>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

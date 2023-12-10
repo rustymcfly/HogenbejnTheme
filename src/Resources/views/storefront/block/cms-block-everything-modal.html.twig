@@ -1,0 +1,37 @@
+{% block block_everything_modal %}
+    {% set modalConfig = {} %}
+    {% set element = {} %}
+    {# @var block \Shopware\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockEntity  #}
+    {% for slot in block.slots %}
+        {% if slot.type === 'everything-modal-settings' %}
+            {% set modalConfig = slot.config %}
+        {% else %}
+            {% set element = slot %}
+        {% endif %}
+    {% endfor %}
+
+        <div class="modal fade" id="{{ modalConfig.modalId.value }}" tabindex="-1"
+                aria-labelledby="{{ modalConfig.modalId.value }}Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="{{ modalConfig.modalId.value }}Label">Modal title</h5>
+                        {% if modalConfig.closable.value %}
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    {% endif %}
+                    <div class="modal-body">
+                        {% sw_include '@Storefront/storefront/element/cms-element-' ~ element.type ~ '.html.twig' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if modalConfig.showButton.value %}
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-backdrop="false"
+                    data-bs-target="#{{ modalConfig.modalId.value }}">
+                {{ modalConfig.label.value }}
+            </button>
+        {% endif %}
+
+
+{% endblock %}

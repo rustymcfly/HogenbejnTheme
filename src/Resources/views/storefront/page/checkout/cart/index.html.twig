@@ -1,0 +1,6 @@
+{% sw_extends "@Storefront/storefront/page/checkout/cart/index.html.twig" %}
+
+{% block page_checkout_cart_product_table %}
+    {% sw_include "@HogenbejnTheme/storefront/component/wrap_as_present.html.twig" %}
+    {{ parent() }}
+{% endblock %}

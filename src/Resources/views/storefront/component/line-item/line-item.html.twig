@@ -1,0 +1,9 @@
+{% sw_extends "@Storefront/storefront/component/line-item/line-item.html.twig" %}
+
+{% block component_line_item_type_include %}
+    {% if lineItem.type is same as 'wrap-as-present' %}
+        {% sw_include '@HogenbejnTheme/storefront/component/line-item/type/wrap_as_present.html.twig' %}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

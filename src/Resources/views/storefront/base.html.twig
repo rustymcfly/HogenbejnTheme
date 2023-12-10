@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+                {% block base_header %}
+                    <div class="topmost-bar">
+                        <div class="container">{{ 'header.topbarText'|trans|raw }}</div>
+                    </div>
+
+                    <header class="header-main">
+                        {% block base_header_inner %}
+                            <div class="container">
+                                {% sw_include '@HogenbejnTheme/storefront/layout/header/header.html.twig' %}
+                            </div>
+                        {% endblock %}
+                    </header>
+                {% endblock %}

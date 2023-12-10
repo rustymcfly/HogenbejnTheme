@@ -1,0 +1,32 @@
+{% if page.extensions.wrapAsPresent.lineItem is not defined %}
+    <div class='wrap-as-present'>
+        <div class="card checkout-card mb-3">
+            <div class="card-body">
+                <div class="card-title">
+                    {{ 'wrapAsPresent.headline'|trans }}
+                </div>
+                {% set formAjaxSubmitOptions = {
+                    changeTriggerSelectors: ['[name="add-to-cart"]']
+                } %}
+                <form data-add-to-cart data-autosubmit action="{{ path('frontend.checkout.wrap-as-present.add') }}"
+                      data-form-auto-submit="true"
+                      data-form-auto-submit-options="{{ formAjaxSubmitOptions|json_encode }}"
+                      method="post">
+                    <input type="hidden" name="redirectTo" value="{{ app.request.get('_route') }}">
+                    <input type="hidden" name="lineItems[{{ page.extensions.wrapAsPresent.lineItemId }}][type]"
+                           value="offer">
+                    <input type="hidden" name="lineItems[{{ page.extensions.wrapAsPresent.lineItemId }}][label]"
+                           value="{{ 'wrapAsPresent.label'|trans }}">
+                    <input type="hidden" name="lineItems[{{ page.extensions.wrapAsPresent.lineItemId }}][id]"
+                           value="{{ page.extensions.wrapAsPresent.lineItemId }}">
+                    <div class='form-check'>
+                        <input class='form-check-input' type='checkbox' name='add-to-cart' id='wrapAsPresent-checkbox'>
+                        <label for='wrapAsPresent-checkbox' class='form-check-label'>
+                            {{ 'wrapAsPresent.checkbox'|trans }}
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endif %}

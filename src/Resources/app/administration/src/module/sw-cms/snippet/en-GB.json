@@ -1,0 +1,147 @@
+{
+  "sw-text-editor-toolbar": {
+    "image-button": {
+      "addImage" : "Add image"
+    }
+  },
+  "sw-cms": {
+    "blocks": {
+      "parallax-section": {
+        "label": "Parallax"
+      },
+      "blog": {
+        "label": "Blog"
+      },
+      "text-image-row": {
+        "label": "3 Spalten Text Bild"
+      },
+      "hero": {
+        "label": "Hero-Element"
+      },
+      "scrollspy-bar": {
+        "label": "Anchor Navigation"
+      },
+      "breadcrumbs": {
+        "label": "Breadcrumbs"
+      },
+      "scrollspy-anchor": {
+        "label": "Anchor",
+        "title": "Title",
+        "id": "ID"
+      },
+      "subcategory-listing": {
+        "label": "Subcategories"
+      },
+      "product-comparison": {
+        "label": "Product Comparison"
+      },
+      "everything-modal": {
+        "label": "Modal"
+      }
+    },
+    "elements": {
+      "scrollspy-anchor": {
+        "label": "Anchor",
+        "title": "Title",
+        "id": "ID"
+      },
+      "link": {
+        "label": "Link",
+        "text": "Text",
+        "target": "Method",
+        "href": "Target",
+        "targetParent": "Parent Window",
+        "targetSelf": "Self",
+        "targetBlank": "Blank",
+        "targetTop": "Top Context",
+        "targetSystem": "System decision"
+      },
+      "blogItem": {
+        "label": "Blog Item",
+        "config": {
+          "label": {
+            "selection": "Items"
+          },
+          "placeholder": {
+            "selection": "Items ..."
+          }
+        }
+      },
+      "faq": {
+        "label": "FAQ Element",
+        "config": {
+          "label": {
+            "selection": "Items",
+            "source-static": "Selection",
+            "source-mapped": "Automatic",
+            "source": "Source"
+          },
+          "placeholder": {
+            "selection": "Items ..."
+          }
+        }
+      },
+      "product-comparison-columns": {
+        "label": "Product comparison",
+        "config": {
+          "label": {
+            "compareVariants": "Compare Variants",
+            "selection": "Products"
+          },
+          "placeholder": {
+            "selection": "Products..."
+          }
+        }
+      },
+      "subcategory-items": {
+        "label": "Subcategory Items",
+        "title": "Title",
+        "subtitle": "Subtitle",
+        "showProducts": "Show Products",
+        "showCategories": "Show Subcategories",
+        "button": {
+          "label": "Go To {name}"
+        },
+        "categoryMapped": "Map to category",
+        "category": "Select category",
+        "showProductsSelect": "Select Type",
+        "subcategory-items": "Single Category",
+        "subcategory-product-items": "Product Selection",
+        "types": "CMS-Element-Type",
+        "products": "Products"
+      },
+      "general": {
+        "config": {
+          "label": {
+            "verticalAlignAround": "Space around",
+            "verticalAlignBetween": "Space between",
+            "verticalAlignEvenly": "Space evenly"
+          }
+        }
+      },
+      "everything-modal": {
+        "copyButton": "Copy Button Code",
+        "config": {
+          "label": "Button Text",
+          "headline": "Headline",
+          "showButton": "Show Button",
+          "closable": "Closable"
+        },
+        "headline": "Modal Settings"
+      },
+      "everything-modal-settings": {
+        "label": "Modal Settings"
+      },
+      "productComparison": {
+        "config": {
+          "label": {
+            "compareVariants": "Compare Variants"
+          }
+        }
+      },
+      "media-video": {
+        "label": "Video"
+      }
+    }
+  }
+}

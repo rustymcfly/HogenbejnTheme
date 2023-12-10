@@ -1,0 +1,18 @@
+{% block sw_cms_element_media_video_preview %}
+    <div class="sw-cms-el-preview-media-video">
+        <div class="sw-cms-preview-parallax-section__image" style="position: relative; height:100%;">
+            <img
+                    :src="'/administration/static/img/cms/preview_camera_small.jpg' | asset"
+                    alt=""
+                    style="
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+"
+            >
+            <div style="position:absolute; top:0; left:0; width: 100%; height: 100%; display:flex; justify-content: center; align-items: center">
+                <sw-icon color="#fff" name="solid-play"/>
+            </div>
+        </div>
+    </div>
+{% endblock %}

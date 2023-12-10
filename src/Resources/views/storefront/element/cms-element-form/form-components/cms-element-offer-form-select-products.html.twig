@@ -1,0 +1,33 @@
+{% block cms_form_select_product_content %}
+    <div class="form-group {{ additionalClass }}">
+        {% block cms_form_select_product_content_label %}
+            <label class="form-label" for="form-product">
+                {{ "offer.productSelection"|trans }}{% if required %} {{ "general.required"|trans }}{% endif %}
+            </label>
+        {% endblock %}
+        {% block cms_form_select_product_content_select %}
+            <select name="productId"
+                    id="form-Product"
+                    {% if required %}required="required"{% endif %}
+                    class="{{ formSelectClass }} product-select{% if formViolations.getViolations('/productId') %} is-invalid{% endif %}">
+                {% if not data.get('productId') %}
+                    <option disabled="disabled" selected="selected" value="">
+                        {{ "offer.productPlaceholder"|trans }}
+                    </option>
+                {% endif %}
+
+                {% for product in element.data.products %}
+                    <option value="{{ product.id }}" {% if page.product.id == product.id or data.get('productId') == product.id %}selected="selected"{% endif %}>
+                        {{ product.translated.name }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            {% if formViolations.getViolations('/productId') is not empty %}
+                {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig'
+                    with { violationPath: '/productId' }
+                %}
+            {% endif %}
+        {% endblock %}
+    </div>
+{% endblock %}

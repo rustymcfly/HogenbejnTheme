@@ -1,0 +1,8 @@
+{% block sw_cms_element_everything_modal_settings_config %}
+    <div class="sw-cms-el-config-everything-modal-settings">
+        <sw-checkbox-field v-model="element.config.showButton.value" :label="$t('sw-cms.elements.everything-modal.config.showButton')"></sw-checkbox-field>
+        <sw-text-field v-model="element.config.label.value" :label="$t('sw-cms.elements.everything-modal.config.label')"></sw-text-field>
+        <sw-text-field v-model="element.config.headline.value" :label="$t('sw-cms.elements.everything-modal.config.headline')"></sw-text-field>
+        <sw-checkbox-field v-model="element.config.closable.value" :label="$t('sw-cms.elements.everything-modal.config.closable')"></sw-checkbox-field>
+    </div>
+{% endblock %}

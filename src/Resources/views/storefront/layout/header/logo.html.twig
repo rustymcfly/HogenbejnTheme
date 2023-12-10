@@ -1,0 +1,16 @@
+
+{% block layout_header_logo_inner %}
+    <div class="header-logo-main">
+        {% block layout_header_logo_link %}
+            <a class="header-logo-main-link"
+               href="{{ path('frontend.home.page') }}"
+               title="{{ "header.logoLink"|trans|striptags }}">
+                {% block layout_header_logo_image %}
+                    <div class="header-logo-picture">
+                        {{ fileGetContents('bundles/hogenbejntheme/assets/images/logo_ohne_animation.svg')|raw }}
+                    </div>
+                {% endblock %}
+            </a>
+        {% endblock %}
+    </div>
+{% endblock %}

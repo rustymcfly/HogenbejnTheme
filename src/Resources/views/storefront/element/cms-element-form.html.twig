@@ -1,0 +1,86 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-form.html.twig' %}
+
+{% block element_form %}
+    {%  set config = element.fieldConfig.elements %}
+    <div class="cms-element-{{ element.type }}">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+
+                {% set formViolations = app.request.get('errors') %}
+
+                <div class="card">
+                    <div class="card-body">
+                        {% block element_form_wrapper %}
+                            {% if element.config.type.value is same as('contact') %}
+                                {% block element_form_contact_form_title %}
+                                    {% if block.type != 'everything-modal' %}
+                                        <div class="card-title mb-4">
+                                            {% if element.config.title.value %}
+                                                {{ element.config.title.value }}
+                                            {%  else %}
+                                                {{ "contact.headline"|trans }}
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                {% endblock %}
+
+                                {% block element_form_contact_form_form %}
+                                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-types/contact-form.html.twig'
+                                        with {
+                                            action: element.config.action.value,
+                                            submitText:  element.config.submitText.value
+                                        }
+                                    %}
+                                {% endblock %}
+                            {% elseif element.config.type.value is same as('newsletter') %}
+                                {% block element_form_newsletter_form_title %}
+                                    <div class="card-title mb-4">
+                                        {% if block.type != 'everything-modal' %}
+                                            <div class="card-title mb-4">
+                                                {% if element.config.title.value %}
+                                                    {{ element.config.title.value }}
+                                                {%  else %}
+                                                    {{ "newsletter.headline"|trans }}
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endblock %}
+
+                                {% block element_form_newsletter_form_form %}
+                                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-types/newsletter-form.html.twig'
+                                        with {
+                                        action: 'frontend.form.newsletter.register.handle',
+                                        submitText: 'newsletter.formSubmit'
+                                    }
+                                    %}
+                                {% endblock %}
+                        {% elseif element.config.type.value is same as('offer') %}
+                            {% block element_form_offer_form_title %}
+                                {% if block.type != 'everything-modal' %}
+                                <div class="card-title mb-4">
+                                    {% if element.config.title.value %}
+                                        {{ element.config.title.value }}
+                                    {%  else %}
+                                        {{ "offer.headline"|trans }}
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                            {% endblock %}
+
+                            {% block element_form_offer_form_form %}
+                                {% sw_include '@Storefront/storefront/element/cms-element-form/form-types/offer-form.html.twig'
+                                    with {
+                                    action: element.config.action.value,
+                                    submitText:  element.config.submitText.value
+                                }
+                                %}
+                            {% endblock %}
+                        {% endif %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

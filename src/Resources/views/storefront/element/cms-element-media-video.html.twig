@@ -1,0 +1,20 @@
+{% block element_media_video %}
+    {% set config = element.fieldConfig.elements %}
+    {% if element.data %}
+	{% if block.type == 'hero' %}
+	{% set config = {
+		autoplay: true,
+		muted: true,
+		controls:false,
+		loop: true
+	} %}
+	{% endif %}
+    <div class="cms-element-{{ element.type }}" {% if block.type == 'hero' %}style="background: #6c6c6c;max-height: 100vh;overflow: hidden;"{% endif %}>
+        <video {% if block.type == 'hero' %}style="object-fit:cover;mix-blend-mode: multiply;" {% endif %}{% if config.controls %}controls {% else %}playsinline {% endif %}{% if config.muted %}muted {% endif %}{% if config.autoplay %}autoplay {% endif %}{% if config.loop %}loop {% endif %}class="w-100 mh-vh-100">
+
+            <source src="{{ element.data.url }}" type="{{ element.data.mimeType }}">
+
+        </video>
+    </div>
+    {% endif %}
+{% endblock %}

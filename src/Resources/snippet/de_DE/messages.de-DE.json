@@ -1,0 +1,32 @@
+{
+    "offer": {
+        "formSubmit":"Jetzt Angebot anfragen",
+        "submitText":"Jetzt Angebot anfragen",
+        "headline":"Angebot anfragen",
+        "productSelection": "Produkt",
+        "success": "Vielen Dank für Ihre Anfrage!",
+        "productPlaceholder": "Produkt"
+    },
+    "coupon": {
+        "added": {
+            "headline":  "Gutschein hinzugefügt",
+            "code":  "Gutscheincode: ",
+            "text":  "Der Gutschein wurde automatisch zum Warenkorb hinzugefügt",
+            "discounts":  "Rabatte mit diesem Gutschein",
+            "value":  "Wert"
+        },
+        "couponcode": {
+            "not": {
+                "found": "Code nicht gefunden",
+                "valid": "Code ungültig"
+            }
+        },
+        "back": "Zurück"
+    },
+    "wrapAsPresent": {
+        "lineItemLabel": "Als Geschenk verpacken",
+        "headline": "Als Geschenk verpacken",
+        "checkbox": "Deinem Warenkorb wird die Option \"als Geschenk verpacken\" hinzugefügt",
+        "label": "Als Geschenk verpacken"
+    }
+}

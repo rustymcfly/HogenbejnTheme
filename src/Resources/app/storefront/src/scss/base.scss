@@ -1,0 +1,89 @@
+@import "./cookies";
+@import "./hero";
+@font-face {
+  font-family: "Parchment MF";
+  src: url("/fonts/Parchment.ttf");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Parchment MF", sans-serif;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+.footer-bottom {
+  background: inherit;
+}
+
+.header-logo-picture {
+  svg {
+    max-height: 210px;
+    max-width: 320px;
+  }
+}
+
+.topmost-bar {
+  padding: 0.5rem;
+  background: var(--bs-primary);
+  color: white;
+  text-align: center;
+
+  a {
+    color: white !important;
+  }
+}
+
+.modal-title {
+  font-size: 3rem;
+  padding-left: 1.5rem;
+}
+
+.swag-custom-notifications-newsletter-popup__content {
+  margin-top: -60px;
+
+  .modal-body.form-content:before {
+    content: '';
+    display: block;
+    height: 200px;
+    width: 100%;
+    background-image: url("/media/05/15/02/1673383692/taube.jpg");
+    background-size: cover;
+  }
+}
+.cms-element-text {
+  > .cms-element-alignment {
+    width: 100%;
+  }
+}
+
+@keyframes shine {
+  from {
+    top: 0
+  }
+  to {
+    top: 100%
+  }
+}
+.icon-whatsapp {
+  &, &>svg, &>svg>path {
+    fill: #25D366;
+  }
+}

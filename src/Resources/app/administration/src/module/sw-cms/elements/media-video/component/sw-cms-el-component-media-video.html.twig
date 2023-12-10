@@ -1,0 +1,7 @@
+{% block sw_cms_el_component_media_video %}
+    <div class="sw-cms-el-component-media-video" style="min-height:50px">
+        <video style="width:100%;" v-if="media">
+            <source :src="media.url" type="media.mimeType"/>
+        </video>
+    </div>
+{% endblock %}

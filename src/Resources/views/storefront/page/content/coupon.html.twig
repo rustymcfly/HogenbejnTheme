@@ -1,0 +1,19 @@
+{% sw_extends "@Storefront/storefront/base.html.twig" %}
+
+{# @var coupon \Shopware\Core\Checkout\Promotion\PromotionEntity  #}
+    {% block base_content %}
+        <h3>{{ 'coupon.added.headline'|trans }}</h3>
+        <p>{{ 'coupon.added.text'|trans }}</p>
+
+        <h1>{{ 'coupon.added.code'|trans }} {{ coupon.code }}</h1>
+        <p>
+            {{ 'coupon.added.discounts'|trans }}<br/>
+            {% for discount in coupon.discounts %}
+
+                {# @var discount \Shopware\Core\Checkout\Promotion\Aggregate\PromotionDiscount\PromotionDiscountEntity  #}
+                {{ 'coupon.added.value'|trans }} {{ discount.type == 'absolute' ? discount.value|currency : discount.value ~ '%' }}
+
+            {% endfor %}
+        </p>
+        <a href="javascript:history.go(-1)">{{ 'coupon.back'|trans }}</a>
+    {% endblock %}

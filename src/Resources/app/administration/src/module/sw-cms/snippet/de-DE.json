@@ -1,0 +1,167 @@
+{
+  "sw-text-editor-toolbar": {
+    "image-button": {
+      "addImage" : "Bild hinzufügen"
+    }
+  },
+  "wrapAsPresent": {
+    "lineItemLabel": "Als Geschenk verpacken"
+  },
+  "sw-cms": {
+    "blocks": {
+      "parallax-section": {
+        "label": "Parallax"
+      },
+      "blog": {
+        "label": "Blog"
+      },
+      "faq": {
+        "label": "FAQ"
+      },
+      "hero": {
+        "label": "Hero-Element"
+      },
+      "text-image-row": {
+        "label": "3 Spalten Text Bild"
+      },
+      "scrollspy-bar": {
+        "label": "Ankernavigation"
+      },
+      "breadcrumbs": {
+        "label": "Breadcrumbs"
+      },
+      "scrollspy-anchor": {
+        "label": "Anker",
+        "title": "Titel",
+        "id": "ID"
+      },
+      "subcategory-listing": {
+        "label": "Subkategorien"
+      },
+      "product-comparison": {
+        "label": "Produktvergleich"
+      },
+      "everything-modal": {
+        "label": "Modal"
+      }
+    },
+    "elements": {
+      "scrollspy-anchor": {
+        "label": "Anker",
+        "title": "Titel",
+        "id": "ID"
+      },
+      "link": {
+        "label": "Link",
+        "text": "Text",
+        "target": "Methode",
+        "href": "Ziel",
+        "targetParent": "Eltern-Fenster",
+        "targetSelf": "Eigenes Fenster",
+        "targetBlank": "Neues Fenster",
+        "targetTop": "Darüberliegendes Kontext",
+        "targetSystem": "Systementscheidung"
+      },
+      "blogItem": {
+        "label": "Blog Einträge",
+        "config": {
+          "label": {
+            "selection": "Einträge"
+          },
+          "placeholder": {
+            "selection": "Einträge ..."
+          }
+        }
+      },
+      "product-comparison-columns": {
+        "label": "Produktvergleich",
+        "compareVariants": "Varianten vergleichen",
+        "config": {
+          "label": {
+            "compareVariants": "Varianten Vergleichen",
+            "selection": "Produkte"
+          },
+          "placeholder": {
+            "selection": "Produkte..."
+          }
+        }
+      },
+      "faq": {
+        "label": "FAQ Elemente",
+        "config": {
+          "label": {
+            "selection": "Einträge",
+            "source-static": "Auswahl",
+            "source-mapped": "Automatisch",
+            "source": "Quelle"
+          },
+          "placeholder": {
+            "selection": "Einträge ..."
+          }
+        }
+      },
+      "subcategory-items": {
+        "label": "Subkategorien",
+        "title": "Title",
+        "subtitle": "Subtitle",
+        "showProducts": "Produkte zeigen",
+        "showCategories": "Subkategorien zeigen",
+        "categoryMapped": "Kategorie übernehmen",
+        "category": "Kategorie wählen",
+        "showProductsSelect": "Auswahlart",
+        "button": {
+          "label": "Mehr zu {name}"
+        },
+        "subcategory-items": "Einzelkategorie",
+        "subcategory-product-items": "Produktauswahl",
+        "types": "CMS-Element-Typ",
+        "products": "Produkte"
+      },
+      "general": {
+        "config": {
+          "label": {
+            "verticalAlignAround": "rundum Platz verteilen",
+            "verticalAlignBetween": "dazwischen Platz verteilen",
+            "verticalAlignEvenly": "gleichmäßig Platz verteilen"
+          }
+        }
+      },
+      "form": {
+        "config": {
+          "label": {
+            "receiverEmail": "Empfänger E-Mail",
+            "action": "Ziel-Controller",
+            "selectProducts": "Produkte wählen",
+            "actionContact": "Kontakt",
+            "actionNewsletter": "Newsletter",
+            "actionOffer": "Angebot",
+            "typeContact": "Kontakt",
+            "typeNewsletter": "Newsletter",
+            "typeOffer": "Angebot",
+            "submitText": "\"Jetzt Absenden\" Text",
+            "submitTextContact": "contact.formSubmit",
+            "submitTextNewsletter": "newsletter.formSubmit",
+            "submitTextOffer": "offer.formSubmit"
+
+          }
+        }
+      },
+      "everything-modal": {
+        "copyButton": "Button Code Kopieren",
+        "config": {
+          "label": "Button Text",
+          "headline": "Überschrift",
+          "showButton": "Button anzeigen",
+          "closable": "Schließbar"
+        },
+        "headline": "Modal Einstellungen"
+      },
+      "everything-modal-settings": {
+        "label": "Modal Einstellungen"
+      },
+      "media-video": {
+        "label": "Video"
+      }
+    }
+  }
+}
