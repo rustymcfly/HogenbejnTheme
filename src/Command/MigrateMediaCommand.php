@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Command;
+namespace RustyMcFly\HogenbejnTheme\Command;
 
 use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;

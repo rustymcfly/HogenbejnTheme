@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Content\Struct;
+namespace RustyMcFly\HogenbejnTheme\Content\Struct;
 
 class OfferFormStruct extends \Shopware\Core\Framework\Struct\Struct
 {

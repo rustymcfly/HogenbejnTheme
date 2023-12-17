@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Controller;
+namespace RustyMcFly\HogenbejnTheme\Controller;
 
 use HogenbejnTheme\Content\Cart\WrapAsPresentLineItemFactory;
 use HogenbejnTheme\Page\Offer\AbstractOfferFormRoute;

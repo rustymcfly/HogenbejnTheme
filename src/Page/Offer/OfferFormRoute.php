@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Page\Offer;
+namespace RustyMcFly\HogenbejnTheme\Page\Offer;
 
 use HogenbejnTheme\Content\Struct\OfferFormRouteResponseStruct;
 use Shopware\Core\Content\LandingPage\LandingPageDefinition;

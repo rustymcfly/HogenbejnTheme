@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Controller;
+namespace RustyMcFly\HogenbejnTheme\Controller;
 
 use Shopware\Core\Checkout\Cart\Cart;
 use Shopware\Core\Checkout\Cart\SalesChannel\CartService;

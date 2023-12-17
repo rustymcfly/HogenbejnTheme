@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Page\Coupon;
+namespace RustyMcFly\HogenbejnTheme\Page\Coupon;
 
 use Monolog\Logger;
 use Shopware\Core\Content\Flow\Dispatching\Aware\DataAware;

@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Subscriber;
+namespace RustyMcFly\HogenbejnTheme\Subscriber;
 
 use HogenbejnTheme\Content\Cart\WrapAsPresentLineItemFactory;
 use HogenbejnTheme\Content\Struct\HasWrapAsPresentStruct;

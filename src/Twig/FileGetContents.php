@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Twig;
+namespace RustyMcFly\HogenbejnTheme\Twig;
 
 use Shopware\Core\Content\Media\MediaEntity;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;

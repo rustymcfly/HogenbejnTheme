@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Content\Struct;
+namespace RustyMcFly\HogenbejnTheme\Content\Struct;
 
 use Shopware\Core\Framework\Struct\Struct;
 

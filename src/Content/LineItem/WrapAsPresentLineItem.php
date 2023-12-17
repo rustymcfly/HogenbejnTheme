@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Content\LineItem;
+namespace RustyMcFly\HogenbejnTheme\Content\LineItem;
 
 use Shopware\Core\Checkout\Cart\LineItem\LineItem;
 

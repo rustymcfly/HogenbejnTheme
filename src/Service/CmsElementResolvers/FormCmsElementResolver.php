@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Service\CmsElementResolvers;
+namespace RustyMcFly\HogenbejnTheme\Service\CmsElementResolvers;
 
 use HogenbejnTheme\Content\Struct\OfferFormStruct;
 use Shopware\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;

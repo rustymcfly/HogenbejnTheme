@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Content\OfferUpload;
+namespace RustyMcFly\HogenbejnTheme\Content\OfferUpload;
 
 use Shopware\Core\Framework\DataAbstractionLayer\EntityCollection;
 

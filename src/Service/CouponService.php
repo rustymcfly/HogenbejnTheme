@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Service;
+namespace RustyMcFly\HogenbejnTheme\Service;
 
 use HogenbejnTheme\Page\Coupon\CouponEvent;
 use Shopware\Core\Checkout\Cart\LineItem\LineItem;

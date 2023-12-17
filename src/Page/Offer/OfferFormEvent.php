@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Page\Offer;
+namespace RustyMcFly\HogenbejnTheme\Page\Offer;
 
 use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\Event\EventData\EventDataCollection;

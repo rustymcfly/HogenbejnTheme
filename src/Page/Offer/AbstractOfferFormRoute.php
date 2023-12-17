@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Page\Offer;
+namespace RustyMcFly\HogenbejnTheme\Page\Offer;
 
 use Shopware\Core\Framework\Validation\DataBag\RequestDataBag;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;

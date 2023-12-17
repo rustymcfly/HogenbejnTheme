@@ -1,6 +1,6 @@
 <?php
 
-namespace HogenbejnTheme\Content\Cart;
+namespace RustyMcFly\HogenbejnTheme\Content\Cart;
 
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;

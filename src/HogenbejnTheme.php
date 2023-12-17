@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace HogenbejnTheme;
+namespace RustyMcFly\HogenbejnTheme;
 
 use HogenbejnTheme\Page\Coupon\CouponEvent;
 use HogenbejnTheme\Page\Offer\OfferFormEvent;
