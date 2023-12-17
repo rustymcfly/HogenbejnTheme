@@ -1,7 +1,6 @@
 import './component';
 import './preview';
-import CMS from 'src/module/sw-cms/constant/sw-cms.constant';
-
+Shopware.Service('cmsService')
 Shopware.Service('cmsService').registerCmsBlock({
   name: 'hero',
   label: 'sw-cms.blocks.hero.label',
@@ -26,7 +25,7 @@ Shopware.Service('cmsService').registerCmsBlock({
         },
         data: {
           media: {
-            value: CMS.MEDIA.previewMountain,
+            value: 'framework/assets/default/cms/preview_mountain_large.jpg',
             source: 'default',
           },
         },

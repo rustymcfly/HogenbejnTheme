@@ -1,14 +1,35 @@
 {
-  "name": "swag/theme-skeleton",
-  "description": "Theme skeleton plugin",
+  "name": "rustymcfly/hogenbejntheme",
+  "description": "The Theme for hogenbejn.de",
   "type": "shopware-platform-plugin",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "Martin Flogaus",
+      "email": "hello@martin-flogaus.de"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "HogenbejnTheme\\": "src/"
     }
   },
+  "require": {
+    "shopware/core": "^6.5"
+  },
   "extra": {
+    "description": {
+      "de-DE": "Theme HogenbejnTheme plugin",
+      "en-GB": "Theme HogenbejnTheme plugin"
+    },
+    "manufacturerLink": {
+      "de-DE": "martin-flogaus.de",
+      "en-GB": "martin-flogaus.de"
+    },
+    "supportLink": {
+      "de-DE": "martin-flogaus.de",
+      "en-GB": "martin-flogaus.de"
+    },
     "shopware-plugin-class": "HogenbejnTheme\\HogenbejnTheme",
     "label": {
       "de-DE": "Theme HogenbejnTheme plugin",
