@@ -11,7 +11,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "HogenbejnTheme\\": "src/"
+      "RustyMcFly\\HogenbejnTheme\\": "src/"
     }
   },
   "require": {
@@ -30,7 +30,7 @@
       "de-DE": "martin-flogaus.de",
       "en-GB": "martin-flogaus.de"
     },
-    "shopware-plugin-class": "HogenbejnTheme\\HogenbejnTheme",
+    "shopware-plugin-class": "RustyMcFly\\HogenbejnTheme\\HogenbejnTheme",
     "label": {
       "de-DE": "Theme HogenbejnTheme plugin",
       "en-GB": "Theme HogenbejnTheme plugin"
