@@ -2,8 +2,8 @@
 
 namespace RustyMcFly\HogenbejnTheme;
 
-use HogenbejnTheme\Page\Coupon\CouponEvent;
-use HogenbejnTheme\Page\Offer\OfferFormEvent;
+use RustyMcFly\HogenbejnTheme\Page\Coupon\CouponEvent;
+use RustyMcFly\HogenbejnTheme\Page\Offer\OfferFormEvent;
 use Shopware\Core\Framework\Plugin;
 use Shopware\Storefront\Framework\ThemeInterface;
 

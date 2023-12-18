@@ -2,7 +2,7 @@
 
 namespace RustyMcFly\HogenbejnTheme\Page\Offer;
 
-use HogenbejnTheme\Content\Struct\OfferFormRouteResponseStruct;
+use RustyMcFly\HogenbejnTheme\Content\Struct\OfferFormRouteResponseStruct;
 use Shopware\Core\Content\LandingPage\LandingPageDefinition;
 use Shopware\Core\Content\Media\Exception\DuplicatedMediaFileNameException;
 use Shopware\Core\Content\Media\File\FileFetcher;

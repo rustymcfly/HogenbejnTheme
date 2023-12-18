@@ -2,7 +2,7 @@
 
 namespace RustyMcFly\HogenbejnTheme\Page\Offer;
 
-use HogenbejnTheme\Content\Struct\OfferFormRouteResponseStruct;
+use RustyMcFly\HogenbejnTheme\Content\Struct\OfferFormRouteResponseStruct;
 use Shopware\Core\System\SalesChannel\StoreApiResponse;
 
 class OfferFormRouteResponse extends StoreApiResponse

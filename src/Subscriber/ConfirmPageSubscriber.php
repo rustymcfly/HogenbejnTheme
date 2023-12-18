@@ -2,8 +2,8 @@
 
 namespace RustyMcFly\HogenbejnTheme\Subscriber;
 
-use HogenbejnTheme\Content\Cart\WrapAsPresentLineItemFactory;
-use HogenbejnTheme\Content\Struct\HasWrapAsPresentStruct;
+use RustyMcFly\HogenbejnTheme\Content\Cart\WrapAsPresentLineItemFactory;
+use RustyMcFly\HogenbejnTheme\Content\Struct\HasWrapAsPresentStruct;
 use Shopware\Core\Framework\Uuid\Uuid;
 use Shopware\Storefront\Page\Checkout\Cart\CheckoutCartPageLoadedEvent;
 use Shopware\Storefront\Page\Checkout\Confirm\CheckoutConfirmPageLoadedEvent;

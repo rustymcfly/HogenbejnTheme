@@ -2,8 +2,8 @@
 
 namespace RustyMcFly\HogenbejnTheme\Controller;
 
-use HogenbejnTheme\Content\Cart\WrapAsPresentLineItemFactory;
-use HogenbejnTheme\Page\Offer\AbstractOfferFormRoute;
+use RustyMcFly\HogenbejnTheme\Content\Cart\WrapAsPresentLineItemFactory;
+use RustyMcFly\HogenbejnTheme\Page\Offer\AbstractOfferFormRoute;
 use Shopware\Core\Checkout\Cart\Cart;
 use Shopware\Core\Checkout\Cart\LineItemFactoryRegistry;
 use Shopware\Core\Checkout\Cart\SalesChannel\CartService;

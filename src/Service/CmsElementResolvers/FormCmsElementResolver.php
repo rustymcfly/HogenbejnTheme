@@ -2,7 +2,7 @@
 
 namespace RustyMcFly\HogenbejnTheme\Service\CmsElementResolvers;
 
-use HogenbejnTheme\Content\Struct\OfferFormStruct;
+use RustyMcFly\HogenbejnTheme\Content\Struct\OfferFormStruct;
 use Shopware\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Shopware\Core\Content\Cms\DataResolver\CriteriaCollection;
 use Shopware\Core\Content\Cms\DataResolver\Element\ElementDataCollection;

@@ -2,7 +2,7 @@
 
 namespace RustyMcFly\HogenbejnTheme\Content\Cart;
 
-use HogenbejnTheme\Content\LineItem\WrapAsPresentLineItem;
+use RustyMcFly\HogenbejnTheme\Content\LineItem\WrapAsPresentLineItem;
 use Shopware\Core\Checkout\Cart\LineItem\LineItem;
 use Shopware\Core\Checkout\Cart\LineItemFactoryHandler\LineItemFactoryInterface;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;

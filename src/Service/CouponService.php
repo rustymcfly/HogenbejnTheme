@@ -2,7 +2,7 @@
 
 namespace RustyMcFly\HogenbejnTheme\Service;
 
-use HogenbejnTheme\Page\Coupon\CouponEvent;
+use RustyMcFly\HogenbejnTheme\Page\Coupon\CouponEvent;
 use Shopware\Core\Checkout\Cart\LineItem\LineItem;
 use Shopware\Core\Checkout\Cart\SalesChannel\CartService;
 use Shopware\Core\Checkout\Promotion\Aggregate\PromotionIndividualCode\PromotionIndividualCodeCollection;
