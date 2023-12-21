@@ -7,7 +7,9 @@
                title="{{ "header.logoLink"|trans|striptags }}">
                 {% block layout_header_logo_image %}
                     <div class="header-logo-picture">
-                        {{ fileGetContents('bundles/hogenbejntheme/assets/images/logo_ohne_animation.svg')|raw }}
+                        {% set assetUrl = asset('/assets/images/logo_ohne_animation.svg', 'theme') %}
+
+                        {{ fileGetContents(assetUrl|replace({ 'https://hogenbejn.de' : ''})|split('?')[0])|raw }}
                     </div>
                 {% endblock %}
             </a>
