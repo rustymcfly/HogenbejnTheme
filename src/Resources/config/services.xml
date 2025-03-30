@@ -6,18 +6,10 @@
 
     <services>
         <service id="RustyMcFly\HogenbejnTheme\Twig\FileGetContents">
-            <call method="setContainer">
-                <argument type="service" id="service_container"/>
-            </call>
-            <tag name="twig.extension"/>
-        </service>
 
-        <service id="RustyMcFly\HogenbejnTheme\Command\MigrateMediaCommand">
-            <argument type="service" id="media.repository"/>
-            <tag name="console.command"/>
-            <call method="setContainer">
-                <argument type="service" id="service_container"/>
-            </call>
+            <argument>%kernel.project_dir%/public</argument>
+
+            <tag name="twig.extension"/>
         </service>
         <service id="RustyMcFly\HogenbejnTheme\Content\OfferUpload\OfferUploadDefinition">
             <tag name="shopware.entity.definition" entity="offer_upload"/>
@@ -79,6 +71,22 @@
             <call method="setContainer">
                 <argument type="service" id="service_container"/>
             </call>
+        </service>
+
+        <service id="RustyMcFly\HogenbejnTheme\Service\CmsElementResolvers\ProductDescriptionCmsElementResolver">
+            <argument type="service"
+                      id="Shopware\Core\Content\Product\Cms\ProductDescriptionReviewsCmsElementResolver"/>
+            <tag name="shopware.cms.data_resolver"/>
+        </service>
+        <service id="RustyMcFly\HogenbejnTheme\Service\CmsElementResolvers\ProductPropertiesCmsElementResolver">
+            <argument type="service"
+                      id="Shopware\Core\Content\Product\Cms\ProductDescriptionReviewsCmsElementResolver"/>
+            <tag name="shopware.cms.data_resolver"/>
+        </service>
+        <service id="RustyMcFly\HogenbejnTheme\Service\CmsElementResolvers\ProductReviewCmsElementResolver">
+            <argument type="service"
+                      id="Shopware\Core\Content\Product\Cms\ProductDescriptionReviewsCmsElementResolver"/>
+            <tag name="shopware.cms.data_resolver"/>
         </service>
     </services>
 </container>

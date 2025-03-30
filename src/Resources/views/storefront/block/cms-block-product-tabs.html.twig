@@ -1,0 +1,98 @@
+
+{% block cms_block_product_tabs %}
+    {% set tabs = [] %}
+    {% set settings = [] %}
+    {# @var block Shopware\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockEntity #}
+    {% for element in block.slots %}
+        {% if element.type == 'tab-settings-element' and element.config.title.value is defined %}
+            {% set tab = block.slots.getSlot(element.slot|replace({'_settings_': '_'})) %}
+            {% if  ( ( tab.type === 'text' and tab.config.content.value|trim ) or ( 'kulms' in tab.type and tab.data is not null ) or ('kulms' not in tab.type and tab.type !== 'text' )) %}
+                {% set settings = settings|merge([element]) %}
+            {% endif %}
+        {% else %}
+            {% set tabs = tabs|merge([element]) %}
+        {% endif %}
+    {% endfor %}
+    <div class="product-detail-tabs cms-block-product-tabs">
+        <div class="card card-tabs">
+            <div class="cms-card-header card-header product-detail-tab-navigation product-description-reviews-tab-navigation">
+                <ul class="nav nav-tabs product-detail-tab-navigation-list"
+                    id="product-detail-tabs"
+                    role="tablist">
+                    {% for settingsItem in settings %}
+                        {% set tab = block.slots.getSlot(settingsItem.slot|replace({'_settings_': '_'})) %}
+
+                        {% if settingsItem.config.active.value and ( ( tab.type === 'text' and tab.config.content.value|trim ) or ( 'kulms' in tab.type and tab.data is not null ) or ('kulms' not in tab.type and tab.type !== 'text' ) ) %}
+
+                            {% set tabId = "tab-" ~ settingsItem.id %}
+                            {% set tabHref = "#tab-" ~ settingsItem.id ~ "-pane" %}
+                            {% set tabContent = "tab-" ~ settingsItem.id ~ "-pane" %}
+                            <li class="nav-item">
+                                <a class="nav-link description-tab {% if not loop.index0 %} active {% endif %}"
+                                   id="{{ tabId }}"
+                                   data-bs-toggle="tab"
+                                        {# @deprecated tag:v6.6.0 - Registering plugin on selector "data-offcanvas-tabs" is deprecated. Use "data-off-canvas-tabs" instead #}
+                                        {% if feature('v6.6.0.0') %}
+                                            data-off-canvas-tabs="true"
+                                        {% else %}
+                                            data-offcanvas-tabs="true"
+                                        {% endif %}
+                                   href="{{ tabHref }}"
+                                   role="tab"
+                                   aria-controls="{{ tabContent }}"
+                                   aria-selected="true">
+                                    {{ settingsItem.config.title.value }}
+                                    <span class="product-detail-tab-navigation-icon">
+                            {% sw_icon 'arrow-medium-right' style {'pack':'solid'} %}
+                        </span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="product-detail-tabs-content">
+                <div class="tab-content">
+                    {% for element in tabs %}
+                        {% set settingsItem = block.slots.getSlot(element.slot|replace({'_': '_settings_'})) %}
+                        {% if settingsItem.config.active.value %}
+                            {% set tabId = "tab-" ~ settingsItem.id %}
+                            {% set tabHref = "#tab-" ~ settingsItem.id ~ "-pane" %}
+                            {% set tabContent = "tab-" ~ settingsItem.id ~ "-pane" %}
+                            <div class="tab-pane fade show  {% if not loop.index0 %} active {% endif %}"
+                                 id="{{ tabContent }}"
+                                 role="tabpanel"
+                                 aria-labelledby="{{ tabId }}">
+                                {% if element.type !== 'product-description' %}
+                                    {% block utilities_offcanvas_header %}
+                                        <div class="offcanvas-header">
+                                            {% block utilities_offcanvas_close %}
+                                                <button class="btn btn-light offcanvas-close js-offcanvas-close">
+                                                    {% block utilities_offcanvas_close_icon %}
+                                                        {% sw_icon 'x' style { 'size': 'sm' } %}
+                                                    {% endblock %}
+                                                </button>
+                                            {% endblock %}
+                                        </div>
+                                    {% endblock %}
+
+                                    {% block utilities_offcanvas_content_container %}
+                                        <div class="offcanvas-body">
+                                            {% block utilities_offcanvas_content %}
+                                                {% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" %}
+                                            {% endblock %}
+                                        </div>
+                                    {% endblock %}
+                                {% else %}
+                                    {% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" %}
+                                {% endif %}
+
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

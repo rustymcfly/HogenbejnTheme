@@ -1,0 +1,2 @@
+(this["webpackJsonpPluginhogenbejn-theme"]=this["webpackJsonpPluginhogenbejn-theme"]||[]).push([[2],{brLL:function(e,i,s){"use strict";s.r(i);i.default={template:"<div style='\r\n    max-height: 100%;\r\n    overflow: hidden;'>\r\n    <div style='overflow:hidden'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cum esse facilis numquam officiis possimus\r\n        unde voluptate! Dolores facilis molestias nisi quas tempora. Consectetur, dolor dolores maiores modi quaerat\r\n        rerum?\r\n    </div>\r\n</div>\r\n"}}}]);
+//# sourceMappingURL=2.js.map

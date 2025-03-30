@@ -9,7 +9,11 @@ use Twig\TwigFunction;
 
 class FileGetContents extends AbstractExtension
 {
-    use ContainerAwareTrait;
+
+    public function __construct(private string $rootFilePath)
+    {
+    }
+
     public function getFunctions()
     {
         return array(
@@ -19,11 +23,7 @@ class FileGetContents extends AbstractExtension
 
     public function fileGetContents($file)
     {
-//        /**
-//         * @var MediaEntity
-//         */
-//        $media;
-        return file_get_contents($this->container->getParameter('shopware.filesystem.public.config.root') . DIRECTORY_SEPARATOR . $file);
+        return file_get_contents($this->rootFilePath . DIRECTORY_SEPARATOR . $file);
     }
 
 }

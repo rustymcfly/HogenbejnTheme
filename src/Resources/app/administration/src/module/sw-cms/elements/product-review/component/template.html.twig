@@ -1,0 +1,9 @@
+<div>
+    {# @var review Shopware\Core\Content\Product\Aggregate\ProductReview\ProductReviewEntity #}
+    <div v-for='review in reviews'>
+        <b v-if='review.customer'>{{ review.customer.firstName }} {{ review.customer.lastName }}</b>
+        <b v-else>{{ eview.externalUser }}</b><br>
+        {{ review.points }} / 5<br>
+        <p>{{ review.comment }}</p>
+    </div>
+</div>

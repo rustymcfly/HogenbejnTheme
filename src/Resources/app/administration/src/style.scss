@@ -1,0 +1,60 @@
+/*!
+ * Copyright (c) 2024. Die Leoparden GmbH
+ */
+
+.tab-content {
+  display: none;
+
+  &.block {
+    display: block;
+
+    & > * {
+      min-height: 100px
+    }
+  }
+}
+
+.product-tabs-block {
+
+  .sw-cms-el-product-description-reviews__tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  div[class*="sw-cms-slot-tab_settings"] {
+    justify-content: center;
+    min-width: 50px;
+    cursor: pointer;
+
+    span {
+      display: inline-block;
+
+      & > span {
+        color: #b3bfcc;
+        border-bottom: 1px solid #b3bfcc;
+        &.active {
+          font-weight: bold;
+          color: #52667a;
+          border-bottom: 1px solid #52667a;
+        }
+        margin-inline-start: .5rem;
+        font-size: 14px;
+        margin: auto 5px auto 5px;
+        padding: 0 0 5px;
+        &:empty {
+          min-width: 150px;
+        }
+      }
+    }
+    .sw-cms-slot__actions {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  .tab-item:first-child span > span {
+    margin-left: 0;
+  }
+
+}

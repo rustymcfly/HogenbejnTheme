@@ -18,6 +18,9 @@
     "moduleResolution": "Node",
     "baseUrl": ".",
     "paths": {
+      "vue/*": [
+        "../../../../../../../vendor/shopware/administration/Resources/app/administration/node_modules/vue/*"
+      ],
       "vue-router/*": [
         "../../../../../../../vendor/shopware/administration/Resources/app/administration/node_modules/vue-router/*"
       ],
@@ -28,6 +31,7 @@
   },
   "files": [
     "../../../../../../../vendor/shopware/administration/Resources/app/administration/src/global.types.ts",
+    "../../../../../BasePlugin/src/Resources/app/administration/shims.d.ts",
     "../../../../../../../vendor/shopware/administration/Resources/app/administration/src/html-shim.d.ts"
   ],
   "include": [

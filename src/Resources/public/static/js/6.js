@@ -1,0 +1,2 @@
+(this["webpackJsonpPluginhogenbejn-theme"]=this["webpackJsonpPluginhogenbejn-theme"]||[]).push([[6],{"4wcS":function(n,e,r){"use strict";r.r(e);e.default={template:"<div style='\r\n    max-height: 100%;\r\n    overflow: hidden;'>\r\n    <div style='overflow:hidden'>\r\n        <b>max mustermann</b><br/>\r\n        4.5 / 5<br/>\r\n        Comment\r\n    </div>\r\n</div>\r\n"}}}]);
+//# sourceMappingURL=6.js.map

@@ -7,6 +7,15 @@
   "wrapAsPresent": {
     "lineItemLabel": "Als Geschenk verpacken"
   },
+  "rustmcfly": {
+    "hogenbejntheme": {
+      "product-tabs": "Dynamische Tabs",
+      "product-properties": "Produkt Eigenschaften",
+      "product-review": "Produkt Bewertungen",
+      "product-description": "Produkt Beschreibung",
+      "tab-settings-element": "Tab-Einstellungen"
+    }
+  },
   "sw-cms": {
     "blocks": {
       "parallax-section": {

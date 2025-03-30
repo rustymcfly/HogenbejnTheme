@@ -1,0 +1,2 @@
+(this["webpackJsonpPluginhogenbejn-theme"]=this["webpackJsonpPluginhogenbejn-theme"]||[]).push([[4],{"9OHP":function(e,n,t){"use strict";t.r(n);n.default={template:"<div style='\r\n    max-height: 100%;\r\n    overflow: hidden;'>\r\n    a: b<br/>\r\n    c: d\r\n</div>\r\n"}}}]);
+//# sourceMappingURL=4.js.map

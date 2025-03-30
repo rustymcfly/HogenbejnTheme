@@ -5,6 +5,11 @@ const { Component, Mixin } = Shopware;
 
 Component.register('sw-cms-el-component-media-video', {
   template,
+  props: {
+    element: {
+      type: Object,
+    }
+  },
   inject: [
     'repositoryFactory'
   ],

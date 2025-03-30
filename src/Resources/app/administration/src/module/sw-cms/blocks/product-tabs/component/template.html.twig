@@ -1,0 +1,11 @@
+<div class='product-tabs-block'>
+    <div class="sw-cms-el-product-description-reviews__tabs">
+        <div v-for="key of settingsSlots" @click='openTab(key)' :class='{"tab-item": true, "active":  openedTab === key}'>
+            <slot :name='key'></slot>
+        </div>
+        <sw-button v-if="settingsSlots.length <= 10" @click='addItem' variant='primary'>+</sw-button>
+    </div>
+    <div v-for='key of tabSlots' :class="getTabClasses(key)" >
+        <slot :name='key'></slot>
+    </div>
+</div>

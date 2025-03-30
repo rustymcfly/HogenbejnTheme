@@ -9,7 +9,7 @@
                     <div class="header-logo-picture">
                         {% set assetUrl = asset('/assets/images/logo_ohne_animation.svg', 'theme') %}
 
-                        {{ fileGetContents(assetUrl|replace({ 'https://hogenbejn.de' : ''})|split('?')[0])|raw }}
+                        {{ fileGetContents(assetUrl|replace({ (app.request.schemeAndHttpHost) : ''})|split('?')[0])|raw }}
                     </div>
                 {% endblock %}
             </a>

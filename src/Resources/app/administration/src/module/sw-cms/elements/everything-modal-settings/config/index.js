@@ -5,7 +5,11 @@ const { Component, Mixin, Utils } = Shopware;
 
 Component.register('sw-cms-el-config-everything-modal-settings', {
   template,
-
+  props: {
+    element: {
+      type: Object,
+    }
+  },
   inject: ['repositoryFactory'],
 
   computed: {
