@@ -9,7 +9,15 @@
 
             <argument>%kernel.project_dir%/public</argument>
 
+
             <tag name="twig.extension"/>
+        </service>
+
+        <service id="RustyMcFly\HogenbejnTheme\Command\MigrateMediaCommand">
+            <argument>%kernel.project_dir%/public</argument>
+            <argument type="service" id="media.repository"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <tag name="console.command"/>
         </service>
         <service id="RustyMcFly\HogenbejnTheme\Content\OfferUpload\OfferUploadDefinition">
             <tag name="shopware.entity.definition" entity="offer_upload"/>

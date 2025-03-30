@@ -2,31 +2,23 @@
 
 namespace RustyMcFly\HogenbejnTheme\Command;
 
+use Doctrine\DBAL\Connection;
+use Shopware\Core\Content\Media\MediaCollection;
 use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
-use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
+use Shopware\Core\Framework\Uuid\Uuid;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 class MigrateMediaCommand extends Command
 {
 
-    /**
-     * @var EntityRepository
-     */
-    private $mediaRepository;
-
-    public function __construct(EntityRepository $mediaRepository)
+    public function __construct(private readonly string $rootPath, private readonly EntityRepository $mediaRepository, private readonly Connection $connection)
     {
         parent::__construct(self::$defaultName);
-        $this->mediaRepository = $mediaRepository;
     }
-
-    use ContainerAwareTrait;
 
     protected static $defaultName = 'media:migrate';
 
@@ -35,34 +27,36 @@ class MigrateMediaCommand extends Command
 
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $fsRoot = $this->container->getParameter('shopware.filesystem.public.config.root');
-        foreach ($this->getDirContents($fsRoot . DIRECTORY_SEPARATOR . 'thumbnails') as $path) {
-            if (!is_dir($path)) {
-                $pathInfo = pathinfo($path);
+        $mediaIds = $this->connection->fetchAllAssociative(<<<SQL
+select lower(hex(id)) as id from media where path not like concat('%', file_name, '%')
+SQL
+        );
 
-                $criteria = new Criteria();
 
-                $criteria->addFilter(new EqualsFilter('fileName', preg_replace('/[0-9]+x[0-9]+\.[a-z]{3}$/', '', $pathInfo["filename"])));
+        $criteria = new Criteria(array_column($mediaIds, "id"));
 
-                $entity = $this->mediaRepository->search($criteria, Context::createDefaultContext())->first();
-                if ($entity) {
-                    $output->write('migrate ' . $path . PHP_EOL);
-                    $mediaPath = str_replace('https://hogenbejn.de', '', $entity->getUrl());
-                    $mediaDirs = explode(DIRECTORY_SEPARATOR, $mediaPath);
-                    $mediaPathInfo = pathinfo($mediaPath);
-                    array_pop($mediaDirs);
-                    array_shift($mediaDirs);
-                    $this->createDirRecursive($fsRoot, $mediaDirs);
-                    $fileContent = file_get_contents($path);
-                    file_put_contents($fsRoot . $mediaPath, $fileContent);
-                    dump($fsRoot . $mediaPath);
-                }
 
-            } else {
-                $output->write($path . PHP_EOL);
+        /**
+         * @var $entities MediaCollection
+         */
+        $entities = $this->mediaRepository->search($criteria, Context::createDefaultContext())->getEntities();
+        foreach ($entities as $entity) {
+            $search = $this->rootPath . '/media/*/*/*/*/' . $entity->getFileNameIncludingExtension();
+            $file = glob($search);
+
+            if (count($file)) {
+                $path = str_replace($this->rootPath . DIRECTORY_SEPARATOR, '', $file[0]);
+                $id = $entity->getId();
+                $this->connection->executeStatement(
+                "update media set path = :path where id = :id;"
+                , [
+                    "path" =>$path,
+                    "id" => Uuid::fromHexToBytes($id),
+                ]);
             }
+
         }
         return 1;
 
